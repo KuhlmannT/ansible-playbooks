@@ -1,0 +1,10 @@
+---
+- name: Debian Upgrade Playbook
+  hosts: all
+  tasks:
+    - name: update
+      become: yes
+      become_user: root
+      tasks:
+    - name: Upgrade all apt packages
+       apt: upgrade=dist force_apt_get=yes
